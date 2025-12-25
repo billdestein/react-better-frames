@@ -21,7 +21,7 @@ type FrameConfig = {
 //-----------------------------------------------------------------------------------------------
 // Canvas
 //-----------------------------------------------------------------------------------------------
-export default class Canvas {
+export class Canvas {
   canvasContext: any
   divRef: any
   frameConfigs: any[] = []

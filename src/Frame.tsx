@@ -161,7 +161,7 @@ type Props = {
 //----------------------------------------------------------------------------------------------
 // Frame
 //----------------------------------------------------------------------------------------------
-const Frame: React.FunctionComponent<Props> = (props) => {
+export const Frame: React.FunctionComponent<Props> = (props) => {
   const {buttons, canvas, geometry, onResize, title } = props
 
   const wrapperId = `${Math.random()}`
@@ -715,5 +715,3 @@ const Frame: React.FunctionComponent<Props> = (props) => {
     </Wrapper>
   )
 }
-
-export default Frame
