@@ -1,9 +1,9 @@
 import React from 'react'
 import styled from 'styled-components'
-import Canvas from './Canvas'
-import FrameTitle from './FrameTitle'
-import FrameButtons from './FrameButtons'
 import type { Button } from './Button'
+import { Canvas } from './Canvas'
+import { FrameButtons  } from './FrameButtons'
+import { FrameTitle } from './FrameTitle'
 
 type Props = {
   buttons: Button[]
@@ -27,7 +27,7 @@ const Header = styled.div<HeaderProps>`
     line-height: ${props => props.$height}px;
 `
 
-const FrameHeader: React.FunctionComponent<Props> = (props) => {
+export const FrameHeader: React.FunctionComponent<Props> = (props) => {
   const { buttons, canvas, height, onMouseDown, title } = props
 
   //----------------------------------------------------------------------------------------------
@@ -40,5 +40,3 @@ const FrameHeader: React.FunctionComponent<Props> = (props) => {
     </Header>
   )
 }
-
-export default FrameHeader

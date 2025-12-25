@@ -11,9 +11,7 @@ type Props = {
   title: string
 }
 
-const FrameTitle: React.FunctionComponent<Props> = (props) => {
+export const FrameTitle: React.FunctionComponent<Props> = (props) => {
   const { title } = props
   return <Title>{title}</Title>
 }
-
-export default FrameTitle

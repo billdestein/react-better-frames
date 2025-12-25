@@ -2,10 +2,10 @@ import React from 'react'
 import {debounce } from 'lodash'
 import type { ReactElement } from 'react'
 import styled from 'styled-components'
-import Canvas from './Canvas'
 import { Button } from './Button'
+import { Canvas } from './Canvas'
 import { Geometry } from './Geometry'
-import FrameHeader from './FrameHeader'
+import { FrameHeader } from './FrameHeader'
 
 enum Resizer {
   NONE = 'none',

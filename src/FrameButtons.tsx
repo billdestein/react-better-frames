@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import Canvas from './Canvas'
+import { Canvas } from './Canvas'
 import type { Button } from './Button'
 import { Tooltip } from 'react-tooltip'
 
@@ -31,7 +31,7 @@ type Props = {
 //----------------------------------------------------------------------------------------------
 // FrameButtons
 //----------------------------------------------------------------------------------------------
-const FrameButtons: React.FunctionComponent<Props> = (props) => {
+export const FrameButtons: React.FunctionComponent<Props> = (props) => {
   const { buttons, canvas } = props
   const { getNextKey } = canvas
 
@@ -68,5 +68,3 @@ const FrameButtons: React.FunctionComponent<Props> = (props) => {
   //----------------------------------------------------------------------------------------------
   return <ButtonRow>{buttons.map((button) => renderButton(button))}</ButtonRow>
 }
-
-export default FrameButtons

@@ -1,4 +1,7 @@
-export { Button } from './Button';
+export { Button } from './Button'
 export { Canvas } from './Canvas'
-export { Frame } from './Frame';
+export { Frame } from './Frame'
+export { FrameButtons } from './FrameButtons'
+export { FrameHeader } from './FrameHeader'
+export { FrameTitle } from './FrameTitle'
 export { Geometry } from './Geometry'
