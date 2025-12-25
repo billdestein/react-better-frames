@@ -1,8 +1,14 @@
 {
-  "name": "@billdestein/react-better-frames",
+  "name": "@billdesteinn/react-better-frames",
   "version": "0.0.1",
   "description": "React Better Frames",
   "author": "Bill DeStein",
+  "main": "dist/button.umd.js",
+  "module": "dist/button.es.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "dev": "vite --config vite.config.ts --port 3000",
     "build": "vite build --config vite.config.ts"
@@ -25,6 +31,13 @@
     "tsconfig-paths": "^4.2.0",
     "typescript": "^5.3.3",
     "vite": "^5.0.11",
-    "vite-plugin-dts": "^4.5.4"
+    "vite-plugin-dts": "^3.7.1"
+  },
+  "peerDependencies": {
+    "react": ">=17.0.0",
+    "react-dom": ">=17.0.0"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }
