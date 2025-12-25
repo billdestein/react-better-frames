@@ -1,7 +1,7 @@
 import autoBind from 'auto-bind'
 import React from 'react'
 import { createRoot } from 'react-dom/client';
-import type { Geometry } from './types'
+import type { Geometry } from './Geometry'
 
 type Props = {
   geometry: Geometry

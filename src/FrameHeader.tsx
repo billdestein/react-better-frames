@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import Canvas from './Canvas'
 import FrameTitle from './FrameTitle'
 import FrameButtons from './FrameButtons'
-import type { Button } from './types'
+import type { Button } from './Button'
 
 type Props = {
   buttons: Button[]

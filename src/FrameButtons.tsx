@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import Canvas from './Canvas'
-import type { Button } from './types'
+import type { Button } from './Button'
 import { Tooltip } from 'react-tooltip'
 
 const ButtonRow = styled.div`

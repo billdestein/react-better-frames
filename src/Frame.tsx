@@ -3,7 +3,8 @@ import {debounce } from 'lodash'
 import type { ReactElement } from 'react'
 import styled from 'styled-components'
 import Canvas from './Canvas'
-import type { Button, Geometry } from './types'
+import { Button } from './Button'
+import { Geometry } from './Geometry'
 import FrameHeader from './FrameHeader'
 
 enum Resizer {
