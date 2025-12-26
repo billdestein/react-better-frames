@@ -18,4 +18,3 @@ export { FrameTitle }
 
 import { type Geometry } from './Geometry'
 export { Geometry }
-

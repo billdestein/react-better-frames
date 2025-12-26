@@ -1,24 +1,19 @@
 {
   "name": "@billdestein/react-better-frames",
-  "version": "0.0.9",
+  "version": "0.0.10",
   "description": "React Better Frames",
   "author": "Bill DeStein",
-  "main": "dist/index.umd.js",
-  "module": "dist/index.es.js",
+  "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "files": [
     "dist"
   ],
   "scripts": {
-    "dev": "vite --config vite.config.ts --port 3000",
-    "build": "vite build --config vite.config.ts"
+    "build": "tsc",
+    "prepublishOnly": "npm run build"
   },
   "keywords": [],
   "license": "ISC",
-  "type": "module",
-  "engines": {
-    "node": ">=18.0.0"
-  },
   "dependencies": {
     "@types/lodash": "^4.17.21",
     "auto-bind": "^5.0.1",
@@ -37,12 +32,5 @@
     "typescript": "^5.3.3",
     "vite": "^5.0.11",
     "vite-plugin-dts": "^3.7.1"
-  },
-  "peerDependencies": {
-    "react": ">=17.0.0",
-    "react-dom": ">=17.0.0"
-  },
-  "publishConfig": {
-    "access": "public"
   }
 }

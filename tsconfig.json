@@ -1,16 +1,21 @@
 {
   "compilerOptions": {
-    "target": "es2016",
-    "jsx": "react",
+    "target": "es2015",
     "module": "commonjs",
-    "types": ["node"],
-    "declaration": true,
-    "emitDeclarationOnly": true,
     "outDir": "./dist",
-    "esModuleInterop": true,
-    "forceConsistentCasingInFileNames": true,
+    "rootDir": "./src",
     "strict": true,
-    "skipLibCheck": true
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "declaration": true,
+    "declarationMap": true,
+    "jsx": "react"
   },
-  "include": ["src/**/*"]
+  "include": [
+    "src/**/*"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
 }
