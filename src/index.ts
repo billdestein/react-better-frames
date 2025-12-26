@@ -1,22 +1,21 @@
-export { type Button } from './Button'
-export { Canvas } from './Canvas'
-export { Frame } from './Frame'
-export { FrameButtons } from './FrameButtons'
-export { FrameHeader } from './FrameHeader'
-export { FrameTitle } from './FrameTitle'
-export { type Geometry } from './Geometry'
+import { type Button } from './Button'
+export { Button }
 
+import { Canvas } from './Canvas'
+export { Canvas }
 
-// export type Geometry = {
-//   height: number
-//   width: number
-//   x: number
-//   y: number
-//   z: number
-// }
+import { Frame } from './Frame'
+export { Frame }
 
-// export type Button = {
-//   icon: React.JSX.Element
-//   onClick: () => void
-//   tip: string
-// }
+import { FrameButtons } from './FrameButtons'
+export { FrameButtons }
+
+import { FrameHeader } from './FrameHeader'
+export { FrameHeader }
+
+import { FrameTitle } from './FrameTitle'
+export { FrameTitle }
+
+import { type Geometry } from './Geometry'
+export { Geometry }
+
