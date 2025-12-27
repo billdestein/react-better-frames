@@ -1,6 +1,6 @@
 {
   "name": "@billdestein/react-better-frames",
-  "version": "0.0.10",
+  "version": "0.0.9",
   "description": "React Better Frames",
   "author": "Bill DeStein",
   "main": "dist/Canvas.js",
