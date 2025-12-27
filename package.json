@@ -3,8 +3,8 @@
   "version": "0.0.10",
   "description": "React Better Frames",
   "author": "Bill DeStein",
-  "main": "dist/Frame.js",
-  "module": "dist/Frame.es.js",
+  "main": "dist/Canvas.js",
+  "module": "dist/Canvas.es.js",
   "types": "dist/index.d.ts",
   "files": [
     "dist"
