@@ -34,8 +34,25 @@ export class Canvas {
   //-----------------------------------------------------------------------------------------------
   // constructor
   //-----------------------------------------------------------------------------------------------
-  constructor() {
+  constructor(divRef: any) {
     autoBind(this)
+
+    // Make sure we only call createRoot once.
+    if (!divRef.encore_root) {
+      divRef.encore_root = createRoot(divRef)
+    }
+    this.root = divRef.encore_root
+
+    // Get the id of the container div.  Assign one if there is none.
+    if (divRef.id) {
+      this.id = divRef.id
+    } else {
+      divRef.id = Math.random()
+      this.id = divRef.id
+    }
+
+    this.divRef = divRef
+    this.divRef.style.position = 'relative'
   }
 
   //-----------------------------------------------------------------------------------------------
@@ -112,24 +129,24 @@ export class Canvas {
   //-----------------------------------------------------------------------------------------------
   // initialize
   //-----------------------------------------------------------------------------------------------
-  initialize(divRef: any) {
-    // Make sure we only call createRoot once.
-    if (!divRef.encore_root) {
-      divRef.encore_root = createRoot(divRef)
-    }
-    this.root = divRef.encore_root
-
-    // Get the id of the container div.  Assign one if there is none.
-    if (divRef.id) {
-      this.id = divRef.id
-    } else {
-      divRef.id = Math.random()
-      this.id = divRef.id
-    }
-
-    this.divRef = divRef
-    this.divRef.style.position = 'relative'
-  }
+  // initialize(divRef: any) {
+  //   // Make sure we only call createRoot once.
+  //   if (!divRef.encore_root) {
+  //     divRef.encore_root = createRoot(divRef)
+  //   }
+  //   this.root = divRef.encore_root
+  //
+  //   // Get the id of the container div.  Assign one if there is none.
+  //   if (divRef.id) {
+  //     this.id = divRef.id
+  //   } else {
+  //     divRef.id = Math.random()
+  //     this.id = divRef.id
+  //   }
+  //
+  //   this.divRef = divRef
+  //   this.divRef.style.position = 'relative'
+  // }
 
   //-----------------------------------------------------------------------------------------------
   // removeFrame
