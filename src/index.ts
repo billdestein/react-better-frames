@@ -1,11 +1,10 @@
 import { type Button } from './Button'
 export { Button }
 
-import { Canvas } from './Canvas'
-export { Canvas }
+// import { Canvas } from './Canvas'
+// export { Canvas }
 
-import { Frame } from './Frame'
-export { Frame }
+export { Frame } from './Frame'
 
 import { FrameButtons } from './FrameButtons'
 export { FrameButtons }

@@ -148,7 +148,7 @@ const Wrapper = styled.div<WrapperProps>`
     z-index: ${props => props.$geometry.z};
 `
 
-type Props = {
+interface Props {
   buttons: Button[]
   canvas: Canvas
   children: ReactElement
@@ -161,7 +161,7 @@ type Props = {
 //----------------------------------------------------------------------------------------------
 // Frame
 //----------------------------------------------------------------------------------------------
-export const Frame: React.FunctionComponent<Props> = (props) => {
+export const Frame: React.FC<Props> = (props) => {
   const {buttons, canvas, geometry, onResize, title } = props
 
   const wrapperId = `${Math.random()}`
