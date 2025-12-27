@@ -4,8 +4,8 @@
 import { Canvas } from './Canvas'
 export { Canvas }
 
-// import { Frame } from './Frame'
-// export { Frame }
+import { Frame } from './Frame'
+export { Frame }
 
 // import { FrameButtons } from './FrameButtons'
 // export { FrameButtons }
@@ -16,5 +16,6 @@ export { Canvas }
 // import { FrameTitle } from './FrameTitle'
 // export { FrameTitle }
 
-// import { type Geometry } from './Geometry'
-// export { Geometry }
+import { Geometry } from './Geometry'
+export { Geometry }
+
