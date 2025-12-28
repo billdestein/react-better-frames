@@ -56,9 +56,9 @@ export class Canvas {
   }
 
   //-----------------------------------------------------------------------------------------------
-  // addFrame
+  // addComponent
   //-----------------------------------------------------------------------------------------------
-  addFrame(component: React.FunctionComponent, props: any ) {
+  addComponent(component: React.FunctionComponent, props: any, message: any ) {
     if (!props.x) {
       this.lastX += 50
       if (this.lastX > 300) {
@@ -86,8 +86,10 @@ export class Canvas {
       z
     }
 
+    props.canvas = this
     props.id = this.getNextKey()
     props.key = this.getNextKey()
+    props.message = message
     props.state = {}
 
     const frameConfig: FrameConfig = {
