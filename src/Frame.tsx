@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { CSSProperties } from 'react'
 import {debounce } from 'lodash'
 import type { ReactElement } from 'react'
 import styled from 'styled-components'
@@ -178,7 +178,7 @@ export const Frame: React.FC<Props> = (props) => {
   let wrapperStartX: number = 0
   let wrapperStartY: number = 0
 
-  const StyleNW = {
+  const StyleNW: CSSProperties = {
     position: 'absolute',
     cursor: 'nwse-resize',
     top: minusThicknessPX,
@@ -188,7 +188,7 @@ export const Frame: React.FC<Props> = (props) => {
     zIndex: 2,
   }
 
-  const StyleN = {
+  const StyleN: CSSProperties = {
     position: 'absolute',
     cursor: 'ns-resize',
     top: minusThicknessPX,
@@ -198,7 +198,7 @@ export const Frame: React.FC<Props> = (props) => {
     zIndex: 2,
   }
 
-  const StyleNE = {
+  const StyleNE: CSSProperties = {
     position: 'absolute',
     cursor: 'nesw-resize',
     top: minusThicknessPX,
@@ -208,7 +208,7 @@ export const Frame: React.FC<Props> = (props) => {
     zIndex: 2,
   }
 
-  const StyleW = {
+  const StyleW: CSSProperties = {
     position: 'absolute',
     cursor: 'ew-resize',
     top: 0,
@@ -218,7 +218,7 @@ export const Frame: React.FC<Props> = (props) => {
     zIndex: 2,
   }
 
-  const StyleE = {
+  const StyleE: CSSProperties = {
     position: 'absolute',
     cursor: 'ew-resize',
     top: 0,
@@ -228,7 +228,7 @@ export const Frame: React.FC<Props> = (props) => {
     zIndex: 2,
   }
 
-  const StyleSW = {
+  const StyleSW: CSSProperties = {
     position: 'absolute',
     cursor: 'nesw-resize',
     top: '100%',
@@ -238,7 +238,7 @@ export const Frame: React.FC<Props> = (props) => {
     zIndex: 2,
   }
 
-  const StyleS = {
+  const StyleS: CSSProperties = {
     position: 'absolute',
     cursor: 'ns-resize',
     top: '100%',
@@ -248,7 +248,7 @@ export const Frame: React.FC<Props> = (props) => {
     zIndex: 2,
   }
 
-  const StyleSE = {
+  const StyleSE: CSSProperties = {
     position: 'absolute',
     cursor: 'nwse-resize',
     top: '100%',
@@ -731,12 +731,17 @@ export const Frame: React.FC<Props> = (props) => {
   return (
     <Wrapper $geometry={geometry} id={wrapperId}>
       <Content>
-        <NW
+        <div
+          style={StyleNW}
           role="button"
           onPointerDown={(e) => resizePointerDown(e, Resizer.NW)}
-          $thicknessPX={thicknessPX}
-          $minusThicknessPX={minusThicknessPX}
         />
+        {/*<NW*/}
+        {/*  role="button"*/}
+        {/*  onPointerDown={(e) => resizePointerDown(e, Resizer.NW)}*/}
+        {/*  $thicknessPX={thicknessPX}*/}
+        {/*  $minusThicknessPX={minusThicknessPX}*/}
+        {/*/>*/}
         <N
           role="button"
           onPointerDown={(e) => resizePointerDown(e, Resizer.N)}
