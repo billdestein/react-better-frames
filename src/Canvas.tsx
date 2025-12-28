@@ -59,7 +59,7 @@ export class Canvas {
   //-----------------------------------------------------------------------------------------------
   // addComponent
   //-----------------------------------------------------------------------------------------------
-  addComponent(component: React.FunctionComponent, props: any, message: any ) {
+  addComponent(component: React.FunctionComponent, message: any ) {
     const geometry: Geometry = {
       height: 200,
       width: 300,
