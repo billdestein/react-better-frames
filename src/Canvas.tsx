@@ -79,8 +79,8 @@ export class Canvas {
     this.lastZ += 1
 
     props.geometry = {
-      height: props.height || 700,
-      width: props.width || 600,
+      height: props.height || 200,
+      width: props.width || 300,
       x: props.x,
       y: props.y,
       z
@@ -125,28 +125,6 @@ export class Canvas {
     this.nextKey += 1
     return this.nextKey
   }
-
-  //-----------------------------------------------------------------------------------------------
-  // initialize
-  //-----------------------------------------------------------------------------------------------
-  // initialize(divRef: any) {
-  //   // Make sure we only call createRoot once.
-  //   if (!divRef.encore_root) {
-  //     divRef.encore_root = createRoot(divRef)
-  //   }
-  //   this.root = divRef.encore_root
-  //
-  //   // Get the id of the container div.  Assign one if there is none.
-  //   if (divRef.id) {
-  //     this.id = divRef.id
-  //   } else {
-  //     divRef.id = Math.random()
-  //     this.id = divRef.id
-  //   }
-  //
-  //   this.divRef = divRef
-  //   this.divRef.style.position = 'relative'
-  // }
 
   //-----------------------------------------------------------------------------------------------
   // removeFrame
