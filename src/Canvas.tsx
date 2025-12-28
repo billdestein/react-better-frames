@@ -3,7 +3,8 @@ import React from 'react'
 import { createRoot } from 'react-dom/client';
 import type { Geometry } from './Geometry'
 
-type Props = {
+type FrameProps = {
+  canvas: Canvas,
   geometry: Geometry
   id: number
   key: number
@@ -14,7 +15,7 @@ type Props = {
 type FrameConfig = {
   component: React.FunctionComponent
   element: any
-  props: Props
+  props: FrameProps
 }
 
 //-----------------------------------------------------------------------------------------------
@@ -59,43 +60,40 @@ export class Canvas {
   // addComponent
   //-----------------------------------------------------------------------------------------------
   addComponent(component: React.FunctionComponent, props: any, message: any ) {
-    if (!props.x) {
-      this.lastX += 50
-      if (this.lastX > 300) {
-        this.lastX = 50
-      }
-      props.x = this.lastX
+    const geometry: Geometry = {
+      height: 200,
+      width: 300,
+      x: this.lastX,
+      y: this.lastY,
+      z: this.lastZ,
     }
 
-    if (!props.y) {
-      this.lastY += 50
-      if (this.lastY > 300) {
-        this.lastY = 50
-      }
-      props.y = this.lastY
+    this.lastX += 50
+    if (this.lastX > 300) {
+      this.lastX = 50
+    }
+
+    this.lastY += 50
+    if (this.lastY > 300) {
+      this.lastY = 50
     }
 
     const z = this.lastZ
     this.lastZ += 1
 
-    props.geometry = {
-      height: props.height || 200,
-      width: props.width || 300,
-      x: props.x,
-      y: props.y,
-      z
+    const frameProps: FrameProps = {
+      canvas: this,
+      geometry,
+      id: this.getNextKey(),
+      key: this.getNextKey(),
+      message: message,
+      state: {},
     }
-
-    props.canvas = this
-    props.id = this.getNextKey()
-    props.key = this.getNextKey()
-    props.message = message
-    props.state = {}
 
     const frameConfig: FrameConfig = {
       component,
-      element: React.createElement(component, props),
-      props,
+      element: React.createElement(component, frameProps),
+      props: frameProps,
     }
 
     this.frameConfigs.push(frameConfig)
