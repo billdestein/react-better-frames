@@ -736,53 +736,40 @@ export const Frame: React.FC<Props> = (props) => {
           role="button"
           onPointerDown={(e) => resizePointerDown(e, Resizer.NW)}
         />
-        {/*<NW*/}
-        {/*  role="button"*/}
-        {/*  onPointerDown={(e) => resizePointerDown(e, Resizer.NW)}*/}
-        {/*  $thicknessPX={thicknessPX}*/}
-        {/*  $minusThicknessPX={minusThicknessPX}*/}
-        {/*/>*/}
-        <N
+        <div
+          style={StyleN}
           role="button"
           onPointerDown={(e) => resizePointerDown(e, Resizer.N)}
-          $thicknessPX={thicknessPX}
-          $minusThicknessPX={minusThicknessPX}
         />
-        <NE
+        <div
+          style={StyleNE}
           role="button"
           onPointerDown={(e) => resizePointerDown(e, Resizer.NE)}
-          $thicknessPX={thicknessPX}
-          $minusThicknessPX={minusThicknessPX}
         />
-        <W
+        <div
+          style={StyleW}
           role="button"
           onPointerDown={(e) => resizePointerDown(e, Resizer.W)}
-          $thicknessPX={thicknessPX}
-          $minusThicknessPX={minusThicknessPX}
         />
-        <E
+        <div
+          style={StyleE}
           role="button"
           onPointerDown={(e) => resizePointerDown(e, Resizer.E)}
-          $thicknessPX={thicknessPX}
-          $minusThicknessPX={minusThicknessPX}
         />
-        <SW
+        <div
+          style={StyleSW}
           role="button"
           onPointerDown={(e) => resizePointerDown(e, Resizer.SW)}
-          $thicknessPX={thicknessPX}
-          $minusThicknessPX={minusThicknessPX}
         />
-        <S
+        <div
+          style={StyleS}
           role="button"
           onPointerDown={(e) => resizePointerDown(e, Resizer.S)}
-          $thicknessPX={thicknessPX}
-          $minusThicknessPX={minusThicknessPX}
         />
-        <SE
+        <div
+          style={StyleSE}
           role="button"
           onPointerDown={(e) => resizePointerDown(e, Resizer.SE)}
-          $thicknessPX={thicknessPX}
-          $minusThicknessPX={minusThicknessPX}
         />
 
         <FrameHeader
@@ -800,4 +787,3 @@ export const Frame: React.FC<Props> = (props) => {
     </Wrapper>
   )
 }
-
