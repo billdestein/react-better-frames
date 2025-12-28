@@ -1,16 +1,8 @@
 import autoBind from 'auto-bind'
 import React from 'react'
 import { createRoot } from 'react-dom/client';
+import type { FrameProps } from './FrameProps'
 import type { Geometry } from './Geometry'
-
-type FrameProps = {
-  canvas: Canvas,
-  geometry: Geometry
-  id: number
-  key: number
-  message: any
-  state: any
-}
 
 type FrameConfig = {
   component: React.FunctionComponent
