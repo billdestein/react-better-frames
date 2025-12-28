@@ -19,17 +19,17 @@ enum Resizer {
   SE = 'se'
 }
 
-interface BodyCoverProps {
-  readonly $geometry: Geometry
-}
-
-const BodyCover = styled.div<BodyCoverProps>`
-    height: ${props=> props.$geometry.height}px;
-    left: 0;
-    position: absolute;
-    top: 0;
-    width: ${props=> props.$geometry.width}px;
-`
+// interface BodyCoverProps {
+//   readonly $geometry: Geometry
+// }
+//
+// const BodyCover = styled.div<BodyCoverProps>`
+//     height: ${props=> props.$geometry.height}px;
+//     left: 0;
+//     position: absolute;
+//     top: 0;
+//     width: ${props=> props.$geometry.width}px;
+// `
 
 const Content = styled.div`
     display: flex;
@@ -44,91 +44,90 @@ const FrameBody = styled.div`
     position: relative;
 `
 
-interface DivProps {
-  readonly $minusThicknessPX: string
-  readonly $thicknessPX: string
-}
+// interface DivProps {
+//   readonly $minusThicknessPX: string
+//   readonly $thicknessPX: string
+// }
 
-
-const NW = styled.div<DivProps>`
-    position: absolute;
-    cursor: nwse-resize;
-    top: ${props => props.$minusThicknessPX};
-    left: ${props => props.$minusThicknessPX};
-    height: ${props => props.$thicknessPX};
-    width: ${props => props.$thicknessPX};
-    z-index: 2;
-`
-
-const N = styled.div<DivProps>`
-    position: absolute;
-    cursor: ns-resize;
-    top: ${props => props.$minusThicknessPX};
-    left: 0;
-    height: ${props => props.$thicknessPX};
-    width: 100%;
-    z-index: 2;
-`
-
-const NE = styled.div<DivProps>`
-    position: absolute;
-    cursor: nesw-resize;
-    top: ${props => props.$minusThicknessPX};
-    left: 100%;
-    height: ${props => props.$thicknessPX};
-    width: ${props => props.$thicknessPX};
-    z-index: 2;
-`
-
-const W = styled.div<DivProps>`
-    position: absolute;
-    cursor: ew-resize;
-    top: 0;
-    left: ${props => props.$minusThicknessPX};
-    height: 100%;
-    width: ${props => props.$thicknessPX};
-    z-index: 2;
-`
-
-const E = styled.div<DivProps>`
-    position: absolute;
-    cursor: ew-resize;
-    top: 0;
-    left: 100%;
-    height: 100%;
-    width: ${props => props.$thicknessPX};
-    z-index: 2;
-`
-
-const SW = styled.div<DivProps>`
-    position: absolute;
-    cursor: nesw-resize;
-    top: 100%;
-    left: ${props => props.$minusThicknessPX};
-    height: ${props => props.$thicknessPX};
-    width: ${props => props.$thicknessPX};
-    z-index: 2;
-`
-
-const S = styled.div<DivProps>`
-    position: absolute;
-    cursor: ns-resize;
-    top: 100%;
-    left: 0;
-    height: ${props => props.$thicknessPX};
-    width: 100%;
-    z-index: 2;
-`
-
-const SE = styled.div<DivProps>`
-    position: absolute;
-    cursor: nwse-resize;
-    top: 100%;
-    left: 100%;
-    height: ${props => props.$thicknessPX};
-    width: ${props => props.$thicknessPX};
-    z-index: 2;
-`
+// const NW = styled.div<DivProps>`
+//     position: absolute;
+//     cursor: nwse-resize;
+//     top: ${props => props.$minusThicknessPX};
+//     left: ${props => props.$minusThicknessPX};
+//     height: ${props => props.$thicknessPX};
+//     width: ${props => props.$thicknessPX};
+//     z-index: 2;
+// `
+//
+// const N = styled.div<DivProps>`
+//     position: absolute;
+//     cursor: ns-resize;
+//     top: ${props => props.$minusThicknessPX};
+//     left: 0;
+//     height: ${props => props.$thicknessPX};
+//     width: 100%;
+//     z-index: 2;
+// `
+//
+// const NE = styled.div<DivProps>`
+//     position: absolute;
+//     cursor: nesw-resize;
+//     top: ${props => props.$minusThicknessPX};
+//     left: 100%;
+//     height: ${props => props.$thicknessPX};
+//     width: ${props => props.$thicknessPX};
+//     z-index: 2;
+// `
+//
+// const W = styled.div<DivProps>`
+//     position: absolute;
+//     cursor: ew-resize;
+//     top: 0;
+//     left: ${props => props.$minusThicknessPX};
+//     height: 100%;
+//     width: ${props => props.$thicknessPX};
+//     z-index: 2;
+// `
+//
+// const E = styled.div<DivProps>`
+//     position: absolute;
+//     cursor: ew-resize;
+//     top: 0;
+//     left: 100%;
+//     height: 100%;
+//     width: ${props => props.$thicknessPX};
+//     z-index: 2;
+// `
+//
+// const SW = styled.div<DivProps>`
+//     position: absolute;
+//     cursor: nesw-resize;
+//     top: 100%;
+//     left: ${props => props.$minusThicknessPX};
+//     height: ${props => props.$thicknessPX};
+//     width: ${props => props.$thicknessPX};
+//     z-index: 2;
+// `
+//
+// const S = styled.div<DivProps>`
+//     position: absolute;
+//     cursor: ns-resize;
+//     top: 100%;
+//     left: 0;
+//     height: ${props => props.$thicknessPX};
+//     width: 100%;
+//     z-index: 2;
+// `
+//
+// const SE = styled.div<DivProps>`
+//     position: absolute;
+//     cursor: nwse-resize;
+//     top: 100%;
+//     left: 100%;
+//     height: ${props => props.$thicknessPX};
+//     width: ${props => props.$thicknessPX};
+//     z-index: 2;
+// `
 
 interface WrapperProps {
   readonly $geometry: Geometry
@@ -177,6 +176,22 @@ export const Frame: React.FC<Props> = (props) => {
   let wrapperStartWidth: number = 0
   let wrapperStartX: number = 0
   let wrapperStartY: number = 0
+
+//   const BodyCover = styled.div<BodyCoverProps>`
+//     height: ${props=> props.$geometry.height}px;
+//     left: 0;
+//     position: absolute;
+//     top: 0;
+//     width: ${props=> props.$geometry.width}px;
+// `
+
+  const StyleBodyCover = {
+    height: `${geometry.height}px`,
+    left: 0,
+    position: 'absolute',
+    top: 0,
+    width: `${geometry.width}px`
+  }
 
   const StyleNW: CSSProperties = {
     position: 'absolute',
@@ -722,7 +737,7 @@ export const Frame: React.FC<Props> = (props) => {
 
   const renderBodyCover = () : React.JSX.Element | null => {
     if (props.isIframe && props.isIframe ) {
-      return (<BodyCover $geometry={geometry} className={'BodyCover'}/>)
+      return (<div style={StyleBodyCover} $geometry={geometry} className={'BodyCover'}/>)
     } else {
       return null
     }
@@ -733,42 +748,34 @@ export const Frame: React.FC<Props> = (props) => {
       <Content>
         <div
           style={StyleNW}
-          role="button"
           onPointerDown={(e) => resizePointerDown(e, Resizer.NW)}
         />
         <div
           style={StyleN}
-          role="button"
           onPointerDown={(e) => resizePointerDown(e, Resizer.N)}
         />
         <div
           style={StyleNE}
-          role="button"
           onPointerDown={(e) => resizePointerDown(e, Resizer.NE)}
         />
         <div
           style={StyleW}
-          role="button"
           onPointerDown={(e) => resizePointerDown(e, Resizer.W)}
         />
         <div
           style={StyleE}
-          role="button"
           onPointerDown={(e) => resizePointerDown(e, Resizer.E)}
         />
         <div
           style={StyleSW}
-          role="button"
           onPointerDown={(e) => resizePointerDown(e, Resizer.SW)}
         />
         <div
           style={StyleS}
-          role="button"
           onPointerDown={(e) => resizePointerDown(e, Resizer.S)}
         />
         <div
           style={StyleSE}
-          role="button"
           onPointerDown={(e) => resizePointerDown(e, Resizer.SE)}
         />
 
@@ -787,3 +794,5 @@ export const Frame: React.FC<Props> = (props) => {
     </Wrapper>
   )
 }
+
+
