@@ -178,6 +178,86 @@ export const Frame: React.FC<Props> = (props) => {
   let wrapperStartX: number = 0
   let wrapperStartY: number = 0
 
+  const StyleNW = {
+    position: 'absolute',
+    cursor: 'nwse-resize',
+    top: minusThicknessPX,
+    left: minusThicknessPX,
+    height: thicknessPX,
+    width: thicknessPX,
+    zIndex: 2,
+  }
+
+  const StyleN = {
+    position: 'absolute',
+    cursor: 'ns-resize',
+    top: minusThicknessPX,
+    left: 0,
+    height: thicknessPX,
+    width: '100%',
+    zIndex: 2,
+  }
+
+  const StyleNE = {
+    position: 'absolute',
+    cursor: 'nesw-resize',
+    top: minusThicknessPX,
+    left: '100%',
+    height: thicknessPX,
+    width: thicknessPX,
+    zIndex: 2,
+  }
+
+  const StyleW = {
+    position: 'absolute',
+    cursor: 'ew-resize',
+    top: 0,
+    left: minusThicknessPX,
+    height: '100%',
+    width: thicknessPX,
+    zIndex: 2,
+  }
+
+  const StyleE = {
+    position: 'absolute',
+    cursor: 'ew-resize',
+    top: 0,
+    left: '100%',
+    height: '100%',
+    width: thicknessPX,
+    zIndex: 2,
+  }
+
+  const StyleSW = {
+    position: 'absolute',
+    cursor: 'nesw-resize',
+    top: '100%',
+    left: minusThicknessPX,
+    height: thicknessPX,
+    width: thicknessPX,
+    zIndex: 2,
+  }
+
+  const StyleS = {
+    position: 'absolute',
+    cursor: 'ns-resize',
+    top: '100%',
+    left: 0,
+    height: thicknessPX,
+    width: '100%',
+    zIndex: 2,
+  }
+
+  const StyleSE = {
+    position: 'absolute',
+    cursor: 'nwse-resize',
+    top: '100%',
+    left: '100%',
+    height: thicknessPX,
+    width: thicknessPX,
+    zIndex: 2,
+  }
+
   //-----------------------------------------------------------------------------------------------
   // dragPointerDown
   //-----------------------------------------------------------------------------------------------
@@ -715,3 +795,4 @@ export const Frame: React.FC<Props> = (props) => {
     </Wrapper>
   )
 }
+
