@@ -5,7 +5,7 @@ import type { FrameProps } from './FrameProps'
 import type { Geometry } from './Geometry'
 
 type FrameConfig = {
-  component: React.FunctionComponent
+  component: React.FunctionComponent<FrameProps>
   element: any
   props: FrameProps
 }
@@ -51,7 +51,7 @@ export class Canvas {
   //-----------------------------------------------------------------------------------------------
   // addComponent
   //-----------------------------------------------------------------------------------------------
-  addComponent(component: React.FunctionComponent, message: any ) {
+  addComponent(component: React.FunctionComponent<FrameProps>, message: any ) {
     const geometry: Geometry = {
       height: 200,
       width: 300,
