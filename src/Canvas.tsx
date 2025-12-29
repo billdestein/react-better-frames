@@ -5,8 +5,7 @@ import type { FrameProps } from './FrameProps'
 import type { Geometry } from './Geometry'
 
 type FrameConfig = {
-  component: React.FunctionComponent<FrameProps>
-  element: any
+  component: (frameProps: FrameProps) => JSX.Element
   props: FrameProps
 }
 
@@ -16,7 +15,7 @@ type FrameConfig = {
 export class Canvas {
   canvasContext: any
   divRef: any
-  frameConfigs: any[] = []
+  frameConfigs: FrameConfig[] = []
   id: string = ''
   lastX = 50
   lastY = 50
@@ -51,7 +50,7 @@ export class Canvas {
   //-----------------------------------------------------------------------------------------------
   // addComponent
   //-----------------------------------------------------------------------------------------------
-  addComponent(component: React.FunctionComponent<FrameProps>, message: any ) {
+  addComponent(component: (frameProps: FrameProps) => JSX.Element, message: any ) {
     const geometry: Geometry = {
       height: 200,
       width: 300,
@@ -84,23 +83,20 @@ export class Canvas {
 
     const frameConfig: FrameConfig = {
       component,
-      element: React.createElement(component, frameProps),
       props: frameProps,
     }
 
     this.frameConfigs.push(frameConfig)
-    this.root.render(this.getElements())
-  }
 
-  //-----------------------------------------------------------------------------------------------
-  // getElements
-  //-----------------------------------------------------------------------------------------------
-  getElements(): React.JSX.Element {
-    return (
-      <>
-        { this.frameConfigs.map((f) => f.element) }
-      </>
-    )
+    const elements: any[] = []
+
+    for (let i = 0; i < this.frameConfigs.length; i += 1) {
+      const frameConfig = this.frameConfigs[i]
+      const element = React.createElement(React.Fragment, { key: i }, React.createElement(frameConfig.component, frameConfig.props))
+      elements.push(element)
+    }
+
+    this.root.render(elements)
   }
 
   //-----------------------------------------------------------------------------------------------
@@ -123,7 +119,16 @@ export class Canvas {
   //-----------------------------------------------------------------------------------------------
   removeFrame(id: number): void {
     this.frameConfigs = this.frameConfigs.filter((f) => f.props.id === id ? false : true)
-    this.root.render(this.getElements())
+
+    const elements: any[] = []
+
+    for (let i = 0; i < this.frameConfigs.length; i += 1) {
+      const frameConfig = this.frameConfigs[i]
+      const element = React.createElement(React.Fragment, { key: i }, React.createElement(frameConfig.component, frameConfig.props))
+      elements.push(element)
+    }
+
+    this.root.render(elements)
   }
 
   //-----------------------------------------------------------------------------------------------
