@@ -1,27 +1,41 @@
-import React from 'react'
-import styled from 'styled-components'
+import React, { CSSProperties } from 'react'
 import { Canvas } from './Canvas'
 import type { Button } from './Button'
 import { Tooltip } from 'react-tooltip'
 
-const ButtonRow = styled.div`
-    cursor: default;
-    display: inline-block;
-    float: right;
-    height: 100%;
-    padding-right: 10px;
-`
+// const ButtonRow = styled.div`
+//     cursor: default;
+//     display: inline-block;
+//     float: right;
+//     height: 100%;
+//     padding-right: 10px;
+// `
 
-const ButtonDiv = styled.div`
-    display: inline-block;
-    height: 30px;
-    padding-left: 9px;
-    padding-right: 9px;
-    &:hover {
-      background-color: lightblue;
-      cursor: pointer;
-    }
-`
+const StyleButtonRow: CSSProperties = {
+  cursor: 'default',
+  display: 'inline-block',
+  float: 'right',
+  height: 'height',
+  paddingRight: '10px',
+}
+
+// const ButtonDiv = styled.div`
+//     display: inline-block;
+//     height: 30px;
+//     padding-left: 9px;
+//     padding-right: 9px;
+//     &:hover {
+//       background-color: lightblue;
+//       cursor: pointer;
+//     }
+// `
+
+const StyleButtonDiv: CSSProperties = {
+  display: 'inline-block',
+  height: '30px',
+  paddingLeft: '9px',
+  paddingRight: '9px',
+}
 
 type Props = {
   buttons: Button[]
@@ -53,18 +67,19 @@ export const FrameButtons: React.FunctionComponent<Props> = (props) => {
   // renderButton
   //----------------------------------------------------------------------------------------------
   const renderButton = (button: any): React.JSX.Element => (
-    <ButtonDiv
+    <div
+      style={ StyleButtonDiv }
       key={getNextKey()}
       onClick={() => {
         button.onClick()
       }}
     >
       {renderButtonContent(button)}
-    </ButtonDiv>
+    </div>
   )
 
   //----------------------------------------------------------------------------------------------
   // render
   //----------------------------------------------------------------------------------------------
-  return <ButtonRow>{buttons.map((button) => renderButton(button))}</ButtonRow>
+  return <div style={StyleButtonRow}>{buttons.map((button) => renderButton(button))}</div>
 }
