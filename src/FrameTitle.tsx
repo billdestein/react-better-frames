@@ -1,11 +1,5 @@
 import React,  { CSSProperties } from 'react'
 
-// const Title = styled.div`
-//     display: inline-block;
-//     float: left;
-//     padding-left: 4px;
-//   `
-
 const StyleTitle: CSSProperties = {
   display: 'inline-block',
   float: 'left',
