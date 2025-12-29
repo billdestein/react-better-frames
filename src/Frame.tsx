@@ -19,19 +19,6 @@ enum Resizer {
   SE = 'se'
 }
 
-// const Content = styled.div`
-//     display: flex;
-//     flex-flow: column;
-//     position: relative;
-//     height: 100%;
-// `
-
-const FrameBody = styled.div`
-    flex: 1;
-    overflow: hidden;
-    position: relative;
-`
-
 interface WrapperProps {
   readonly $geometry: Geometry
 }
@@ -101,6 +88,18 @@ export const Frame: React.FC<Props> = (props) => {
     flexFlow: 'column',
     position: 'relative',
     height: '100%',
+  }
+
+//   const FrameBody = styled.div`
+//     flex: 1;
+//     overflow: hidden;
+//     position: relative;
+// `
+
+  const StyleFrameBody: CSSProperties = {
+    flex: 1,
+    overflow: 'hidden',
+    position: 'relative',
   }
 
   const StyleBodyCover: CSSProperties = {
@@ -704,10 +703,10 @@ export const Frame: React.FC<Props> = (props) => {
           onMouseDown={dragPointerDown}
           title={title}
         />
-        <FrameBody id={bodyId} onMouseDown={restack}>
+        <div style={StyleFrameBody} id={bodyId} onMouseDown={restack}>
           <>{children}</>
           { renderBodyCover() }
-        </FrameBody>
+        </div>
       </div>
     </Wrapper>
   )
