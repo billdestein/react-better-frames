@@ -1,11 +1,16 @@
-import React from 'react'
-import styled from 'styled-components'
+import React,  { CSSProperties } from 'react'
 
-const Title = styled.div`
-    display: inline-block;
-    float: left;
-    padding-left: 4px;
-  `
+// const Title = styled.div`
+//     display: inline-block;
+//     float: left;
+//     padding-left: 4px;
+//   `
+
+const StyleTitle: CSSProperties = {
+  display: 'inline-block',
+  float: 'left',
+  paddingLeft: '4px',
+}
 
 type Props = {
   title: string
@@ -13,5 +18,5 @@ type Props = {
 
 export const FrameTitle: React.FunctionComponent<Props> = (props) => {
   const { title } = props
-  return <Title>{title}</Title>
+  return <div style={StyleTitle}>{title}</div>
 }
