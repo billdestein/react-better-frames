@@ -1,7 +1,6 @@
 import React, { CSSProperties } from 'react'
 import {debounce } from 'lodash'
 import type { ReactElement } from 'react'
-import styled from 'styled-components'
 import { Button } from './Button'
 import { Canvas } from './Canvas'
 import { Geometry } from './Geometry'
@@ -22,20 +21,6 @@ enum Resizer {
 interface WrapperProps {
   readonly $geometry: Geometry
 }
-
-const Wrapper = styled.div<WrapperProps>`
-    background-color: #EEEEEE;
-    box-sizing: border-box;
-    border: 5px solid white;
-    color: #222222;
-    outline: 1px solid black;
-    height: ${props=> props.$geometry.height}px;
-    left: ${props => props.$geometry.x}px;
-    position: absolute;
-    top: ${props => props.$geometry.y}px;
-    width: ${props => props.$geometry.width}px;
-    z-index: ${props => props.$geometry.z};
-`
 
 interface Props {
   buttons: Button[]
@@ -67,21 +52,13 @@ export const Frame: React.FC<Props> = (props) => {
   let wrapperStartX: number = 0
   let wrapperStartY: number = 0
 
-//   const BodyCover = styled.div<BodyCoverProps>`
-//     height: ${props=> props.$geometry.height}px;
-//     left: 0;
-//     position: absolute;
-//     top: 0;
-//     width: ${props=> props.$geometry.width}px;
-// `
-
-// const Content = styled.div`
-//     display: flex;
-//     flex-flow: column;
-//     position: relative;
-//     height: 100%;
-// `
-
+  const StyleBodyCover: CSSProperties = {
+    height: `${geometry.height}px`,
+    left: 0,
+    position: 'absolute',
+    top: 0,
+    width: `${geometry.width}px`
+  }
 
   const StyleContent: CSSProperties = {
     display: 'flex',
@@ -90,24 +67,24 @@ export const Frame: React.FC<Props> = (props) => {
     height: '100%',
   }
 
-//   const FrameBody = styled.div`
-//     flex: 1;
-//     overflow: hidden;
-//     position: relative;
-// `
-
   const StyleFrameBody: CSSProperties = {
     flex: 1,
     overflow: 'hidden',
     position: 'relative',
   }
 
-  const StyleBodyCover: CSSProperties = {
+  const StyleWrapper: CSSProperties = {
+    backgroundColor: '#EEEEEE',
+    boxSizing: 'border-box',
+    border: '5px solid white',
+    color: '#222222',
+    outline: '1px solid black',
     height: `${geometry.height}px`,
-    left: 0,
+    left: `${geometry.x}px`,
     position: 'absolute',
-    top: 0,
-    width: `${geometry.width}px`
+    top: `${geometry.y}px`,
+    width: `${geometry.width}px`,
+    zIndex: `${geometry.z}px`,
   }
 
   const StyleNW: CSSProperties = {
@@ -661,7 +638,7 @@ export const Frame: React.FC<Props> = (props) => {
   }
 
   return (
-    <Wrapper $geometry={geometry} id={wrapperId}>
+    <div style={StyleWrapper} id={wrapperId}>
       <div style={StyleContent}>
         <div
           style={StyleNW}
@@ -708,7 +685,7 @@ export const Frame: React.FC<Props> = (props) => {
           { renderBodyCover() }
         </div>
       </div>
-    </Wrapper>
+    </div>
   )
 }
 
