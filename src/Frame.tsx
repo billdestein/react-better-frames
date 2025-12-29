@@ -1,6 +1,5 @@
-import React, { CSSProperties } from 'react'
+import React, { CSSProperties, ReactNode } from 'react'
 import {debounce } from 'lodash'
-import type { ReactElement } from 'react'
 import { Button } from './Button'
 import { Canvas } from './Canvas'
 import { Geometry } from './Geometry'
@@ -25,7 +24,7 @@ interface WrapperProps {
 interface Props {
   buttons: Button[]
   canvas: Canvas
-  children: ReactElement
+  children: ReactNode
   geometry: Geometry
   isIframe?: boolean
   onResize: (_geometry: Geometry) => void
@@ -35,7 +34,7 @@ interface Props {
 //----------------------------------------------------------------------------------------------
 // Frame
 //----------------------------------------------------------------------------------------------
-export const Frame: React.FC<Props> = (props) => {
+export const Frame = (props: Props) => {
   const {buttons, canvas, geometry, onResize, title } = props
 
   const wrapperId = `${Math.random()}`
