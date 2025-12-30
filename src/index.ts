@@ -1,15 +1,11 @@
 import { Canvas } from './Canvas'
-export { Canvas }
-
 import { Frame } from './Frame'
-export { Frame }
-
 import { FrameButtons } from './FrameButtons'
-export { FrameButtons }
-
 import { FrameProps } from './FrameProps'
-export { FrameProps }
-
 import { Geometry } from './Geometry'
-export { Geometry }
 
+export { Canvas }
+export { Frame }
+export { FrameButtons }
+export type { FrameProps }
+export type { Geometry }

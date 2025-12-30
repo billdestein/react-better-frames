@@ -5,7 +5,7 @@ import type { FrameProps } from './FrameProps'
 import type { Geometry } from './Geometry'
 
 type FrameConfig = {
-  component: (frameProps: FrameProps) => JSX.Element
+  component: (frameProps: FrameProps) => React.JSX.Element
   props: FrameProps
 }
 
@@ -50,7 +50,7 @@ export class Canvas {
   //-----------------------------------------------------------------------------------------------
   // addComponent
   //-----------------------------------------------------------------------------------------------
-  addComponent(component: (frameProps: FrameProps) => JSX.Element, message: any ) {
+  addComponent(component: (frameProps: FrameProps) => React.JSX.Element, message: any ) {
     const geometry: Geometry = {
       height: 200,
       width: 300,
@@ -69,7 +69,6 @@ export class Canvas {
       this.lastY = 50
     }
 
-    const z = this.lastZ
     this.lastZ += 1
 
     const frameProps: FrameProps = {
@@ -87,16 +86,7 @@ export class Canvas {
     }
 
     this.frameConfigs.push(frameConfig)
-
-    const elements: any[] = []
-
-    for (let i = 0; i < this.frameConfigs.length; i += 1) {
-      const frameConfig = this.frameConfigs[i]
-      const element = React.createElement(React.Fragment, { key: i }, React.createElement(frameConfig.component, frameConfig.props))
-      elements.push(element)
-    }
-
-    this.root.render(elements)
+    this.render()
   }
 
   //-----------------------------------------------------------------------------------------------
@@ -118,8 +108,14 @@ export class Canvas {
   // removeFrame
   //-----------------------------------------------------------------------------------------------
   removeFrame(id: number): void {
-    this.frameConfigs = this.frameConfigs.filter((f) => f.props.id === id ? false : true)
+    this.frameConfigs = this.frameConfigs.filter((f) => f.props.id !== id)
+    this.render()
+  }
 
+  //-----------------------------------------------------------------------------------------------
+  // render
+  //-----------------------------------------------------------------------------------------------
+  render(): void {
     const elements: any[] = []
 
     for (let i = 0; i < this.frameConfigs.length; i += 1) {
@@ -129,12 +125,5 @@ export class Canvas {
     }
 
     this.root.render(elements)
-  }
-
-  //-----------------------------------------------------------------------------------------------
-  // setCanvasContext
-  //-----------------------------------------------------------------------------------------------
-  setCanvasContext(canvasContext: any): void {
-    this.canvasContext = canvasContext
   }
 }
