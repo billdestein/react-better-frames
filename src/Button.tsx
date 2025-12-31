@@ -1,6 +1,6 @@
 import React from 'react'
 
-export interface Button {
+export type Button = {
   icon: React.JSX.Element
   onClick: () => void
   tip: string
