@@ -9,23 +9,31 @@ const StyleButtonRow: CSSProperties = {
   float: 'right',
 }
 
-const StyleTooltipAndButton = {
-  borderLeft: '2px solid red',
-  borderRight: '2px solid red',
+const StyleToolTipAndButton: CSSProperties = {
+  display: 'flex',
+  flexDirection: 'row',
+  height: '30px',
 }
 
-const StyleToolTip = {
+const StyleToolTip: CSSProperties = {
   borderLeft: '2px solid green',
   borderRight: '2px solid green',
-  display: 'inline-block',
-}
-
-const StyleButton = {
-  borderLeft: '2px solid blue',
-  borderRight: '2px solid blue',
-  display: 'inline-block',
   height: '30px',
   width: '30px',
+}
+
+const StyleButton: CSSProperties = {
+  alignItems: 'center',
+  borderLeft: '2px solid blue',
+  borderRight: '2px solid blue',
+  display: 'flex',
+  height: '30px',
+  justifyContent: 'center',
+  width: '30px'
+}
+
+const StyleInline: CSSProperties = {
+  display: 'inline-block'
 }
 
 // const StyleButtonDiv: CSSProperties = {
@@ -116,12 +124,14 @@ export const FrameButtons: React.FunctionComponent<Props> = (props) => {
   // renderTooltipAndButton
   //----------------------------------------------------------------------------------------------
   const renderTooltipAndButton = (button: any): React.JSX.Element => (
-    <div style={StyleTooltipAndButton}>
-      <div style={StyleToolTip} >
-        tooltip
+    <div style={StyleToolTipAndButton}>
+      <div style={StyleInline}>
+        <div style={StyleToolTip} />
       </div>
-      <div style={StyleButton} ref={ref}>
-        {button.icon}
+      <div style={StyleInline}>
+        <div style={StyleButton} ref={ref}>
+          {button.icon}
+        </div>
       </div>
     </div>
   )
@@ -132,94 +142,3 @@ export const FrameButtons: React.FunctionComponent<Props> = (props) => {
   return <div style={StyleButtonRow}>{buttons.map((button) => renderTooltipAndButton(button))}</div>
 }
 
-
-
-
-
-
-
-// import React, { CSSProperties } from 'react'
-// import { Canvas } from './Canvas'
-// import type { Button } from './Button'
-// import { Tooltip } from 'react-tooltip'
-//
-// // const ButtonRow = styled.div`
-// //     cursor: default;
-// //     display: inline-block;
-// //     float: right;
-// //     height: 100%;
-// //     padding-right: 10px;
-// // `
-//
-// const StyleButtonRow: CSSProperties = {
-//   cursor: 'default',
-//   display: 'inline-block',
-//   float: 'right',
-//   height: 'height',
-//   paddingRight: '10px',
-// }
-//
-// // const ButtonDiv = styled.div`
-// //     display: inline-block;
-// //     height: 30px;
-// //     padding-left: 9px;
-// //     padding-right: 9px;
-// //     &:hover {
-// //       background-color: lightblue;
-// //       cursor: pointer;
-// //     }
-// // `
-//
-// const StyleButtonDiv: CSSProperties = {
-//   display: 'inline-block',
-//   height: '30px',
-//   paddingLeft: '9px',
-//   paddingRight: '9px',
-// }
-//
-// type Props = {
-//   buttons: Button[]
-//   canvas: Canvas
-// }
-//
-// //----------------------------------------------------------------------------------------------
-// // FrameButtons
-// //----------------------------------------------------------------------------------------------
-// export const FrameButtons: React.FunctionComponent<Props> = (props) => {
-//   const { buttons, canvas } = props
-//   const { getNextKey } = canvas
-//
-//   //----------------------------------------------------------------------------------------------
-//   // renderButtonContent
-//   //----------------------------------------------------------------------------------------------
-//   const renderButtonContent = (button: Button): React.JSX.Element => {
-//     return (
-//       <div key={getNextKey()}>
-//         <div data-tooltip-id={button.tip} data-tooltip-content={button.tip}>
-//           {button.icon}
-//         </div>
-//         <Tooltip id={button.tip} />
-//       </div>
-//     )
-//   }
-//
-//   //----------------------------------------------------------------------------------------------
-//   // renderButton
-//   //----------------------------------------------------------------------------------------------
-//   const renderButton = (button: any): React.JSX.Element => (
-//     <div
-//       style={ StyleButtonDiv }
-//       key={getNextKey()}
-//       onClick={() => {
-//         button.onClick()
-//       }}
-//     >
-//       {renderButtonContent(button)}
-//     </div>
-//   )
-//
-//   //----------------------------------------------------------------------------------------------
-//   // render
-//   //----------------------------------------------------------------------------------------------
-//   return <div style={StyleButtonRow}>{buttons.map((button) => renderButton(button))}</div>
-// }
