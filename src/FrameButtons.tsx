@@ -3,8 +3,8 @@ import { Canvas } from './Canvas'
 import type { Button } from './Button'
 
 const StyleButtonRow: CSSProperties = {
-  cursor: 'default',
-  display: 'inline-block',
+  display: 'flex',
+  flexDirection: 'row',
   float: 'right',
 }
 
@@ -21,13 +21,13 @@ const StyleToolTipWrapper: CSSProperties = {
 }
 
 const StyleToolTipAbsolute: CSSProperties = {
-  backgroundColor: 'lightblue',
+  backgroundColor: 'lightgray',
   color: 'black',
   display: 'inline-block',
   paddingLeft: '5px',
   paddingRight: '5px',
   position: 'absolute',
-  top: '-30px',
+  top: '-35px',
 }
 
 const StyleToolTipRelative: CSSProperties = {
@@ -36,6 +36,7 @@ const StyleToolTipRelative: CSSProperties = {
 
 const StyleButton: CSSProperties = {
   alignItems: 'center',
+  cursor: 'pointer',
   display: 'flex',
   height: '30px',
   justifyContent: 'center',
@@ -67,7 +68,7 @@ export const FrameButtons: React.FunctionComponent<Props> = (props) => {
 
     // Function to run when the mouse enters the element
     function handleMouseEnter() {
-      element.style.backgroundColor = "lightblue";
+      element.style.backgroundColor = "lightgray";
       element.style.color = "black";
       const toolTipDiv = element.previousElementSibling
       toolTipDiv.style.display = "inline-block"
@@ -99,7 +100,7 @@ export const FrameButtons: React.FunctionComponent<Props> = (props) => {
           {button.tip}
         </div>
       </div>
-      <div style={StyleButton} ref={ref}>
+      <div style={StyleButton} onClick={button.onClick} ref={ref}>
         {button.icon}
       </div>
     </div>
