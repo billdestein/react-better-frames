@@ -16,11 +16,9 @@ const StyleToolTipAndButton: CSSProperties = {
 }
 
 const StyleToolTipWrapper: CSSProperties = {
-  borderLeft: '2px solid green',
-  borderRight: '2px solid green',
   height: '30px',
   position: 'relative',
-  width: '30px',
+  width: '1px',
 }
 
 const StyleToolTipAbsolute: CSSProperties = {
@@ -37,8 +35,6 @@ const StyleToolTipRelative: CSSProperties = {
 
 const StyleButton: CSSProperties = {
   alignItems: 'center',
-  borderLeft: '2px solid blue',
-  borderRight: '2px solid blue',
   display: 'flex',
   height: '30px',
   justifyContent: 'center',
@@ -88,35 +84,12 @@ export const FrameButtons: React.FunctionComponent<Props> = (props) => {
   }
 
   //----------------------------------------------------------------------------------------------
-  // renderButton
-  //----------------------------------------------------------------------------------------------
-  // const renderButton = (button: any): React.JSX.Element => (
-  //   <div
-  //     style={ StyleButtonDiv }
-  //     key={getNextKey()}
-  //     onClick={() => {
-  //       button.onClick()
-  //     }}
-  //     ref={ref}
-  //   >
-  //     <div style={StyleToolTipWrapper}>
-  //       <div style={StyleToolTip}>
-  //         Some tool tip
-  //       </div>
-  //     </div>
-  //     {button.icon}
-  //   </div>
-  // )
-
-  //----------------------------------------------------------------------------------------------
   // renderTooltipAndButton
   //----------------------------------------------------------------------------------------------
   const renderTooltipAndButton = (button: any): React.JSX.Element => (
     <div style={StyleToolTipAndButton}>
       <div style={StyleToolTipWrapper} >
-        <div style={StyleToolTipRelative}>
-          relative
-        </div>
+        <div style={StyleToolTipRelative}/>
         <div style={StyleToolTipAbsolute}>
           absolute
         </div>
