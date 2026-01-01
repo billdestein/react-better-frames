@@ -28,27 +28,32 @@ type Props = {
 //----------------------------------------------------------------------------------------------
 export const FrameButtons: React.FunctionComponent<Props> = (props) => {
   const { buttons, canvas } = props
-  // const { getNextKey } = canvas
+  const { getNextKey } = canvas
 
   //----------------------------------------------------------------------------------------------
   // renderButtonContent
   //----------------------------------------------------------------------------------------------
-  // const renderButtonContent = (button: Button): React.JSX.Element => {
-  //   return (
-  //     <div key={getNextKey()}>
-  //       <div data-tooltip-id={button.tip} data-tooltip-content={button.tip}>
-  //         {button.icon}
-  //       </div>
-  //       <Tooltip id={button.tip} />
-  //     </div>
-  //   )
-  // }
+  const renderButtonContent = (button: Button): React.JSX.Element => {
+    return (
+      <div key={getNextKey()}>
+        {button.icon}
+      </div>
+    )
+  }
 
   //----------------------------------------------------------------------------------------------
   // renderButton
   //----------------------------------------------------------------------------------------------
   const renderButton = (button: any): React.JSX.Element => (
-    <div>Button</div>
+    <div
+      style={ StyleButtonDiv }
+      key={getNextKey()}
+      onClick={() => {
+        button.onClick()
+      }}
+    >
+      {renderButtonContent(button)}
+    </div>
   )
 
   //----------------------------------------------------------------------------------------------
