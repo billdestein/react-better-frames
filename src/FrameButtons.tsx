@@ -3,14 +3,6 @@ import { Canvas } from './Canvas'
 import type { Button } from './Button'
 import { Tooltip } from 'react-tooltip'
 
-// const ButtonRow = styled.div`
-//     cursor: default;
-//     display: inline-block;
-//     float: right;
-//     height: 100%;
-//     padding-right: 10px;
-// `
-
 const StyleButtonRow: CSSProperties = {
   cursor: 'default',
   display: 'inline-block',
@@ -18,17 +10,6 @@ const StyleButtonRow: CSSProperties = {
   height: 'height',
   paddingRight: '10px',
 }
-
-// const ButtonDiv = styled.div`
-//     display: inline-block;
-//     height: 30px;
-//     padding-left: 9px;
-//     padding-right: 9px;
-//     &:hover {
-//       background-color: lightblue;
-//       cursor: pointer;
-//     }
-// `
 
 const StyleButtonDiv: CSSProperties = {
   display: 'inline-block',
@@ -47,35 +28,27 @@ type Props = {
 //----------------------------------------------------------------------------------------------
 export const FrameButtons: React.FunctionComponent<Props> = (props) => {
   const { buttons, canvas } = props
-  const { getNextKey } = canvas
+  // const { getNextKey } = canvas
 
   //----------------------------------------------------------------------------------------------
   // renderButtonContent
   //----------------------------------------------------------------------------------------------
-  const renderButtonContent = (button: Button): React.JSX.Element => {
-    return (
-      <div key={getNextKey()}>
-        <div data-tooltip-id={button.tip} data-tooltip-content={button.tip}>
-          {button.icon}
-        </div>
-        <Tooltip id={button.tip} />
-      </div>
-    )
-  }
+  // const renderButtonContent = (button: Button): React.JSX.Element => {
+  //   return (
+  //     <div key={getNextKey()}>
+  //       <div data-tooltip-id={button.tip} data-tooltip-content={button.tip}>
+  //         {button.icon}
+  //       </div>
+  //       <Tooltip id={button.tip} />
+  //     </div>
+  //   )
+  // }
 
   //----------------------------------------------------------------------------------------------
   // renderButton
   //----------------------------------------------------------------------------------------------
   const renderButton = (button: any): React.JSX.Element => (
-    <div
-      style={ StyleButtonDiv }
-      key={getNextKey()}
-      onClick={() => {
-        button.onClick()
-      }}
-    >
-      {renderButtonContent(button)}
-    </div>
+    <div>Button</div>
   )
 
   //----------------------------------------------------------------------------------------------
@@ -83,3 +56,95 @@ export const FrameButtons: React.FunctionComponent<Props> = (props) => {
   //----------------------------------------------------------------------------------------------
   return <div style={StyleButtonRow}>{buttons.map((button) => renderButton(button))}</div>
 }
+
+
+
+
+
+
+
+// import React, { CSSProperties } from 'react'
+// import { Canvas } from './Canvas'
+// import type { Button } from './Button'
+// import { Tooltip } from 'react-tooltip'
+//
+// // const ButtonRow = styled.div`
+// //     cursor: default;
+// //     display: inline-block;
+// //     float: right;
+// //     height: 100%;
+// //     padding-right: 10px;
+// // `
+//
+// const StyleButtonRow: CSSProperties = {
+//   cursor: 'default',
+//   display: 'inline-block',
+//   float: 'right',
+//   height: 'height',
+//   paddingRight: '10px',
+// }
+//
+// // const ButtonDiv = styled.div`
+// //     display: inline-block;
+// //     height: 30px;
+// //     padding-left: 9px;
+// //     padding-right: 9px;
+// //     &:hover {
+// //       background-color: lightblue;
+// //       cursor: pointer;
+// //     }
+// // `
+//
+// const StyleButtonDiv: CSSProperties = {
+//   display: 'inline-block',
+//   height: '30px',
+//   paddingLeft: '9px',
+//   paddingRight: '9px',
+// }
+//
+// type Props = {
+//   buttons: Button[]
+//   canvas: Canvas
+// }
+//
+// //----------------------------------------------------------------------------------------------
+// // FrameButtons
+// //----------------------------------------------------------------------------------------------
+// export const FrameButtons: React.FunctionComponent<Props> = (props) => {
+//   const { buttons, canvas } = props
+//   const { getNextKey } = canvas
+//
+//   //----------------------------------------------------------------------------------------------
+//   // renderButtonContent
+//   //----------------------------------------------------------------------------------------------
+//   const renderButtonContent = (button: Button): React.JSX.Element => {
+//     return (
+//       <div key={getNextKey()}>
+//         <div data-tooltip-id={button.tip} data-tooltip-content={button.tip}>
+//           {button.icon}
+//         </div>
+//         <Tooltip id={button.tip} />
+//       </div>
+//     )
+//   }
+//
+//   //----------------------------------------------------------------------------------------------
+//   // renderButton
+//   //----------------------------------------------------------------------------------------------
+//   const renderButton = (button: any): React.JSX.Element => (
+//     <div
+//       style={ StyleButtonDiv }
+//       key={getNextKey()}
+//       onClick={() => {
+//         button.onClick()
+//       }}
+//     >
+//       {renderButtonContent(button)}
+//     </div>
+//   )
+//
+//   //----------------------------------------------------------------------------------------------
+//   // render
+//   //----------------------------------------------------------------------------------------------
+//   return <div style={StyleButtonRow}>{buttons.map((button) => renderButton(button))}</div>
+// }
