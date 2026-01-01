@@ -23,11 +23,16 @@ const StyleToolTipWrapper: CSSProperties = {
   width: '30px',
 }
 
-const StyleToolTip: CSSProperties = {
+const StyleToolTipAbsolute: CSSProperties = {
   backgroundColor: 'white',
   color: 'black',
+  display: 'inline-block',
   position: 'absolute',
   top: '-30px',
+}
+
+const StyleToolTipRelative: CSSProperties = {
+  position: 'relative',
 }
 
 const StyleButton: CSSProperties = {
@@ -39,31 +44,6 @@ const StyleButton: CSSProperties = {
   justifyContent: 'center',
   width: '30px'
 }
-
-const StyleInline: CSSProperties = {
-  display: 'inline-block'
-}
-
-// const StyleButtonDiv: CSSProperties = {
-//   display: 'inline-block',
-//   height: '30px',
-//   paddingLeft: '9px',
-//   paddingRight: '9px',
-// }
-//
-// const StyleToolTipWrapper: CSSProperties = {
-//   backgroundColor: 'red',
-//   height: '5px',
-//   position: 'relative',
-//   width: '5px',
-// }
-//
-// const StyleToolTip: CSSProperties = {
-//   border: '3px solid green',
-//   position: 'absolute',
-//   top: '-30px',
-//   width: '50px'
-// }
 
 type Props = {
   buttons: Button[]
@@ -133,17 +113,16 @@ export const FrameButtons: React.FunctionComponent<Props> = (props) => {
   //----------------------------------------------------------------------------------------------
   const renderTooltipAndButton = (button: any): React.JSX.Element => (
     <div style={StyleToolTipAndButton}>
-      <div style={StyleInline}>
-        <div style={StyleToolTipWrapper} >
-          <div style={StyleToolTip}>
-            some tool tip
-          </div>
+      <div style={StyleToolTipWrapper} >
+        <div style={StyleToolTipRelative}>
+          relative
+        </div>
+        <div style={StyleToolTipAbsolute}>
+          absolute
         </div>
       </div>
-      <div style={StyleInline}>
-        <div style={StyleButton} ref={ref}>
-          {button.icon}
-        </div>
+      <div style={StyleButton} ref={ref}>
+        {button.icon}
       </div>
     </div>
   )
