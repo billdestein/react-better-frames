@@ -7,30 +7,47 @@ const StyleButtonRow: CSSProperties = {
   cursor: 'default',
   display: 'inline-block',
   float: 'right',
-  height: 'height',
-  paddingRight: '10px',
 }
 
-const StyleButtonDiv: CSSProperties = {
+const StyleTooltipAndButton = {
+  borderLeft: '2px solid red',
+  borderRight: '2px solid red',
+}
+
+const StyleToolTip = {
+  borderLeft: '2px solid green',
+  borderRight: '2px solid green',
+  display: 'inline-block',
+}
+
+const StyleButton = {
+  borderLeft: '2px solid blue',
+  borderRight: '2px solid blue',
   display: 'inline-block',
   height: '30px',
-  paddingLeft: '9px',
-  paddingRight: '9px',
+  width: '30px',
 }
 
-const StyleToolTipWrapper: CSSProperties = {
-  backgroundColor: 'red',
-  height: '5px',
-  position: 'relative',
-  width: '5px',
-}
-
-const StyleToolTip: CSSProperties = {
-  border: '3px solid green',
-  position: 'absolute',
-  top: '-30px',
-  width: '50px'
-}
+// const StyleButtonDiv: CSSProperties = {
+//   display: 'inline-block',
+//   height: '30px',
+//   paddingLeft: '9px',
+//   paddingRight: '9px',
+// }
+//
+// const StyleToolTipWrapper: CSSProperties = {
+//   backgroundColor: 'red',
+//   height: '5px',
+//   position: 'relative',
+//   width: '5px',
+// }
+//
+// const StyleToolTip: CSSProperties = {
+//   border: '3px solid green',
+//   position: 'absolute',
+//   top: '-30px',
+//   width: '50px'
+// }
 
 type Props = {
   buttons: Button[]
@@ -45,7 +62,7 @@ export const FrameButtons: React.FunctionComponent<Props> = (props) => {
   const { getNextKey } = canvas
 
   //----------------------------------------------------------------------------------------------
-  // rref
+  // ref
   //----------------------------------------------------------------------------------------------
   const ref = (element: any)=> {
     console.log('ref')
@@ -77,28 +94,42 @@ export const FrameButtons: React.FunctionComponent<Props> = (props) => {
   //----------------------------------------------------------------------------------------------
   // renderButton
   //----------------------------------------------------------------------------------------------
-  const renderButton = (button: any): React.JSX.Element => (
-    <div
-      style={ StyleButtonDiv }
-      key={getNextKey()}
-      onClick={() => {
-        button.onClick()
-      }}
-      ref={ref}
-    >
-      <div style={StyleToolTipWrapper}>
-        <div style={StyleToolTip}>
-          Some tool tip
-        </div>
+  // const renderButton = (button: any): React.JSX.Element => (
+  //   <div
+  //     style={ StyleButtonDiv }
+  //     key={getNextKey()}
+  //     onClick={() => {
+  //       button.onClick()
+  //     }}
+  //     ref={ref}
+  //   >
+  //     <div style={StyleToolTipWrapper}>
+  //       <div style={StyleToolTip}>
+  //         Some tool tip
+  //       </div>
+  //     </div>
+  //     {button.icon}
+  //   </div>
+  // )
+
+  //----------------------------------------------------------------------------------------------
+  // renderTooltipAndButton
+  //----------------------------------------------------------------------------------------------
+  const renderTooltipAndButton = (button: any): React.JSX.Element => (
+    <div style={StyleTooltipAndButton}>
+      <div style={StyleToolTip} >
+        tooltip
       </div>
-      {button.icon}
+      <div style={StyleButton} ref={ref}>
+        {button.icon}
+      </div>
     </div>
   )
 
   //----------------------------------------------------------------------------------------------
   // render
   //----------------------------------------------------------------------------------------------
-  return <div style={StyleButtonRow}>{buttons.map((button) => renderButton(button))}</div>
+  return <div style={StyleButtonRow}>{buttons.map((button) => renderTooltipAndButton(button))}</div>
 }
 
 
