@@ -16,15 +16,16 @@ const StyleToolTipAndButton: CSSProperties = {
 }
 
 const StyleToolTipWrapper: CSSProperties = {
-  height: '30px',
   position: 'relative',
   width: '1px',
 }
 
 const StyleToolTipAbsolute: CSSProperties = {
-  backgroundColor: 'white',
-  color: 'black',
+  backgroundColor: 'black',
+  color: 'white',
   display: 'inline-block',
+  paddingLeft: '5px',
+  paddingRight: '5px',
   position: 'absolute',
   top: '-30px',
 }
