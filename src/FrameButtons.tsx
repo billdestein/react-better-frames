@@ -31,14 +31,33 @@ export const FrameButtons: React.FunctionComponent<Props> = (props) => {
   const { getNextKey } = canvas
 
   //----------------------------------------------------------------------------------------------
-  // renderButtonContent
+  // rref
   //----------------------------------------------------------------------------------------------
-  const renderButtonContent = (button: Button): React.JSX.Element => {
-    return (
-      <div key={getNextKey()}>
-        {button.icon}
-      </div>
-    )
+  const ref = (element: any)=> {
+    console.log('ref')
+    if (element === null) {
+      return
+    }
+
+    const hoverBox = document.getElementById("hover-box");
+
+    // Function to run when the mouse enters the element
+    function handleMouseEnter() {
+      element.style.backgroundColor = "lightblue";
+      element.style.color = "black";
+      console.log("Mouse entered!");
+    }
+
+    // Function to run when the mouse leaves the element
+    function handleMouseLeave() {
+      element.style.backgroundColor = "initial"; // Resets to original
+      element.style.color = "initial";
+      console.log("Mouse left!");
+    }
+
+    // Attach the event listeners
+    element.addEventListener("mouseenter", handleMouseEnter);
+    element.addEventListener("mouseleave", handleMouseLeave);
   }
 
   //----------------------------------------------------------------------------------------------
@@ -51,8 +70,9 @@ export const FrameButtons: React.FunctionComponent<Props> = (props) => {
       onClick={() => {
         button.onClick()
       }}
+      ref={ref}
     >
-      {renderButtonContent(button)}
+      {button.icon}
     </div>
   )
 
