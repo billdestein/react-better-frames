@@ -18,6 +18,20 @@ const StyleButtonDiv: CSSProperties = {
   paddingRight: '9px',
 }
 
+const StyleToolTipWrapper: CSSProperties = {
+  backgroundColor: 'red',
+  height: '5px',
+  position: 'relative',
+  width: '5px',
+}
+
+const StyleToolTip: CSSProperties = {
+  border: '3px solid green',
+  position: 'absolute',
+  top: '-30px',
+  width: '50px'
+}
+
 type Props = {
   buttons: Button[]
   canvas: Canvas
@@ -72,6 +86,11 @@ export const FrameButtons: React.FunctionComponent<Props> = (props) => {
       }}
       ref={ref}
     >
+      <div style={StyleToolTipWrapper}>
+        <div style={StyleToolTip}>
+          Some tool tip
+        </div>
+      </div>
       {button.icon}
     </div>
   )
