@@ -1,6 +1,6 @@
 {
   "name": "@billdestein/react-better-frames",
-  "version": "0.0.14",
+  "version": "0.0.15",
   "description": "React Better Frames",
   "author": "Bill DeStein",
   "main": "dist/index.js",
