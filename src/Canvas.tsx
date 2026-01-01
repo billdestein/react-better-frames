@@ -1,4 +1,3 @@
-import autoBind from 'auto-bind'
 import React from 'react'
 import { createRoot } from 'react-dom/client';
 import type { FrameProps } from './FrameProps'
@@ -27,7 +26,6 @@ export class Canvas {
   // constructor
   //-----------------------------------------------------------------------------------------------
   constructor(divRef: any) {
-    autoBind(this)
 
     // Make sure we only call createRoot once.
     if (!divRef.encore_root) {

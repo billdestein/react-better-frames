@@ -1,7 +1,6 @@
 import React, { CSSProperties } from 'react'
 import { Canvas } from './Canvas'
 import type { Button } from './Button'
-import { Tooltip } from 'react-tooltip'
 
 const StyleButtonRow: CSSProperties = {
   cursor: 'default',
@@ -16,6 +15,7 @@ const StyleToolTipAndButton: CSSProperties = {
 }
 
 const StyleToolTipWrapper: CSSProperties = {
+  display: 'none',
   position: 'relative',
   width: '1px',
 }
@@ -69,6 +69,8 @@ export const FrameButtons: React.FunctionComponent<Props> = (props) => {
     function handleMouseEnter() {
       element.style.backgroundColor = "lightblue";
       element.style.color = "black";
+      const toolTipDiv = element.previousElementSibling
+      toolTipDiv.style.display = "inline-block"
       console.log("Mouse entered!");
     }
 
@@ -76,6 +78,8 @@ export const FrameButtons: React.FunctionComponent<Props> = (props) => {
     function handleMouseLeave() {
       element.style.backgroundColor = "initial"; // Resets to original
       element.style.color = "initial";
+      const toolTipDiv = element.previousElementSibling
+      toolTipDiv.style.display = "none"
       console.log("Mouse left!");
     }
 
@@ -92,7 +96,7 @@ export const FrameButtons: React.FunctionComponent<Props> = (props) => {
       <div style={StyleToolTipWrapper} >
         <div style={StyleToolTipRelative}/>
         <div style={StyleToolTipAbsolute}>
-          absolute
+          {button.tip}
         </div>
       </div>
       <div style={StyleButton} ref={ref}>
