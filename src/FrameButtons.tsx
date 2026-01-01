@@ -15,11 +15,17 @@ const StyleToolTipAndButton: CSSProperties = {
   height: '30px',
 }
 
-const StyleToolTip: CSSProperties = {
+const StyleToolTipWrapper: CSSProperties = {
   borderLeft: '2px solid green',
   borderRight: '2px solid green',
   height: '30px',
+  position: 'relative',
   width: '30px',
+}
+
+const StyleToolTip: CSSProperties = {
+  position: 'absolute',
+  top: '-30px',
 }
 
 const StyleButton: CSSProperties = {
@@ -126,7 +132,11 @@ export const FrameButtons: React.FunctionComponent<Props> = (props) => {
   const renderTooltipAndButton = (button: any): React.JSX.Element => (
     <div style={StyleToolTipAndButton}>
       <div style={StyleInline}>
-        <div style={StyleToolTip} />
+        <div style={StyleToolTipWrapper} >
+          <div style={StyleToolTip}>
+            some tool tip
+          </div>
+        </div>
       </div>
       <div style={StyleInline}>
         <div style={StyleButton} ref={ref}>
