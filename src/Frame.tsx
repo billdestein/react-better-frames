@@ -27,6 +27,7 @@ interface Props {
   children: ReactNode
   geometry: Geometry
   isIframe?: boolean
+  isResizable?: boolean
   onResize: (_geometry: Geometry) => void
   title: string
 }
@@ -190,7 +191,7 @@ export const Frame = (props: Props) => {
       return
     }
 
-    if (props.isIframe && props.isIframe ) {
+    if (props.isIframe) {
       bodyElement.style.display = 'none'
     }
 
@@ -277,7 +278,7 @@ export const Frame = (props: Props) => {
       return
     }
 
-    if (props.isIframe && props.isIframe ) {
+    if (props.isIframe) {
       bodyElement.style.display = 'block'
     }
 
@@ -310,7 +311,7 @@ export const Frame = (props: Props) => {
       return
     }
 
-    if (props.isIframe && props.isIframe ) {
+    if (props.isIframe) {
       bodyElement.style.display = 'block'
     }
 
@@ -390,7 +391,7 @@ export const Frame = (props: Props) => {
       return
     }
 
-    if (props.isIframe && props.isIframe ) {
+    if (props.isIframe) {
       bodyElement.style.display = 'none'
     }
 
@@ -516,7 +517,7 @@ export const Frame = (props: Props) => {
       return
     }
 
-    if (props.isIframe && props.isIframe) {
+    if (props.isIframe) {
       bodyElement.style.display = 'block'
     }
 
@@ -549,7 +550,7 @@ export const Frame = (props: Props) => {
       return
     }
 
-    if (props.isIframe && props.isIframe) {
+    if (props.isIframe) {
       bodyElement.style.display = 'block'
     }
 
@@ -629,7 +630,7 @@ export const Frame = (props: Props) => {
   const { children } = props
 
   const renderBodyCover = () : React.JSX.Element | null => {
-    if (props.isIframe && props.isIframe ) {
+    if (props.isIframe) {
       return (<div style={StyleBodyCover} className={'BodyCover'}/>)
     } else {
       return null
