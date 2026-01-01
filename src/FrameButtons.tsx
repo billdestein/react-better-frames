@@ -24,6 +24,8 @@ const StyleToolTipWrapper: CSSProperties = {
 }
 
 const StyleToolTip: CSSProperties = {
+  backgroundColor: 'white',
+  color: 'black',
   position: 'absolute',
   top: '-30px',
 }
