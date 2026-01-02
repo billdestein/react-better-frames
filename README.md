@@ -1,6 +1,6 @@
 # react-better-frames
 
-A user-friendly windowing system for use in React applications.
+A user-friendly windowing system for React applications.
 
 ## Demo
 
@@ -10,7 +10,7 @@ https://billdestein.github.io/react-better-frames-demo/
 
 The source code for the demo is here:
 
-https://billdestein.github.io/react-better-frames-demo/
+https://github.com/billdestein/react-better-frames-demo
 
 ## Key Concepts
 
