@@ -113,15 +113,15 @@ import { Canvas, Frame, FrameProps } from '@billdestein/react-better-frames'
 import styled from 'styled-components'
 
 const HelloFrame = (frameProps: FrameProps) => {
-  const { canvas, geometry } = frameProps
-
+  const { canvas, geometry, message } = frameProps
+  
   return (
     <Frame
       buttons={[]}
       canvas={canvas as Canvas}
       geometry={geometry}
       onResize={() => {}}
-      title={'My First Frame'}
+      title={message.title}
     >
       <p>Hello</p>
     </Frame>
@@ -129,7 +129,8 @@ const HelloFrame = (frameProps: FrameProps) => {
 }
 
 const app = (canvas: Canvas) => {
-  canvas.addComponent(HelloFrame, {})
+  canvas.addComponent(HelloFrame, { title: 'My First Frame' })
+  canvas.addComponent(HelloFrame, { title: 'My Second Frame' })
 }
 
 export const Hello = () => {
