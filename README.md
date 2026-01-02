@@ -37,5 +37,7 @@ Make sure you have Node.js installed on your system, which includes npm (Node Pa
 Navigate to the directory where you want to create your project and run the following command. The key is to include the --template typescript flag.
 
 ```bash
-npx create-react-app my-ts-app --template typescript
+    npx create-react-app my-ts-app --template typescript
 ```
+
+
