@@ -43,8 +43,6 @@ Using your terminal, navigate to the directory where you want to create your pro
 
 The command will create a new directory, download all necessary dependencies (React, ReactDOM, TypeScript, Webpack, Babel, etc.), and set up the project structure. This might take a few minutes.  
 
-When the command has completed, a new window will appear in your default browser.  The window will show the React logo.  You can close the window.
-
 ### Step 3: Navigate to Your Project Directory
 
 Using your terminal, change your current directory to your new project folder:
@@ -91,11 +89,22 @@ Using your terminal, cd to your hello-app directory, and run:
     npm install @billdestein/react-better-frames styled-components
 ```
 
-And then create an empty Hello.tsx file by running this command:
+Navigate to the src directory:
 
 ```
-    cd src && touch Hello.tsx
+    cd src
 ```
+
+Create an empty Hello.tsx file:
+
+```
+    touch Hello.tsx    
+```
+
+
+
+
+
 
 ### Step 2: Edit Hello.tsx
 
@@ -143,7 +152,7 @@ export const Hello = () => {
 
 ### Step 3: Edit App.tsx
 
-Again, using your favorite code editor, open the App.tsx file.  Paste the following code into the file and save the file.
+Again, using your favorite code editor, open the App.tsx file.  Replace the content of the file with the code here:
 
 ```typescript
 import React from 'react';
@@ -161,7 +170,13 @@ export default App;
 
 ### Start the Development Server
 
-You can now start the local development server to view your new application in your browser:
+Navigate to the root of your project:
+
+```
+    cd ..
+```
+
+and then:
 
 ```typescript
     npm run start
