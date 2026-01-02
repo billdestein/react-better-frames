@@ -36,12 +36,7 @@ Make sure you have Node.js installed on your system, which includes npm (Node Pa
 Navigate to the directory where you want to create your project and run the following command. The key is to include the --template typescript flag.
 
 ```bash
-<<<<<<< HEAD
     npx create-react-app my-ts-app --template typescript
-```
-
-=======
-npx create-react-app hello-app --template typescript
 ```
 
 ### Step 2: Wait for Installation
@@ -94,5 +89,4 @@ Note 1:  The .tsx extension indicates a file containing TypeScript code and JSX.
 Note 2: The tsconfig.json file contains all the compiler options for your TypeScript project.
 You are now ready to start building your application with the benefits of TypeScript's static type checking!
 
->>>>>>> 1f9dc02 (More work)
 
