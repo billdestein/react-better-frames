@@ -41,11 +41,13 @@ Using your terminal, navigate to the directory where you want to create your pro
 
 ### Step 2: Wait for Installation
 
-The command will create a new directory, download all necessary dependencies (React, ReactDOM, TypeScript, Webpack, Babel, etc.), and set up the project structure. This might take a few minutes.  When the command has completed, a new window will appear in your default browser.  The window will show the React logo.  You can close the window.
+The command will create a new directory, download all necessary dependencies (React, ReactDOM, TypeScript, Webpack, Babel, etc.), and set up the project structure. This might take a few minutes.  
+
+When the command has completed, a new window will appear in your default browser.  The window will show the React logo.  You can close the window.
 
 ### Step 3: Navigate to Your Project Directory
 
-Once the installation is complete, change your current directory to your new project folder:
+Using your terminal, change your current directory to your new project folder:
 
 ```bash
    cd hello-app
@@ -83,13 +85,16 @@ You are now ready to start building your application with the benefits of TypeSc
 
 ### Steo 1: Install the react-better-frames NPM package
 
-Using a second terminal window, cd to your hello-app directory, and run:
+Using your terminal, cd to your hello-app directory, and run:
 
 ```
-    npm install @billdestein/react-better-frames
-    npm install styled-components
-    cd src
-    touch Hello.tsx
+    npm install @billdestein/react-better-frames styled-components
+```
+
+And then create an empty Hello.tsx file by running this command:
+
+```
+    cd src && touch Hello.tsx
 ```
 
 ### Step 2: Edit Hello.tsx
