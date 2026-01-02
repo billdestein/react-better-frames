@@ -81,7 +81,7 @@ You are now ready to start building your application with the benefits of TypeSc
 
 ## Creating Your First Frame
 
-### Steo 1: Install the react-better-frames NPM package
+### Steo 1: Install NPM packages
 
 Using your terminal, cd to your hello-app directory, and run:
 
@@ -100,11 +100,6 @@ Create an empty Hello.tsx file:
 ```
     touch Hello.tsx    
 ```
-
-
-
-
-
 
 ### Step 2: Edit Hello.tsx
 
@@ -183,6 +178,8 @@ and then:
 ```
 
 This command will open a window in your default browser, pointing to http://localhost:3000.
-The web page should show a canvas with two frames.
+The web page should look like this:
+
+![Screenshot](screenshot-1.png)
 
 
