@@ -33,7 +33,7 @@ Make sure you have Node.js installed on your system, which includes npm (Node Pa
 
 ### Step 1: Create a New Project
 
-Navigate to the directory where you want to create your project and run the following command. The key is to include the --template typescript flag.
+Using your terminal, navigate to the directory where you want to create your project and run the following command. The key is to include the --template typescript flag.
 
 ```bash
     npx create-react-app hello-app --template typescript
@@ -41,7 +41,7 @@ Navigate to the directory where you want to create your project and run the foll
 
 ### Step 2: Wait for Installation
 
-The command will create a new directory, download all necessary dependencies (React, ReactDOM, TypeScript, Webpack, Babel, etc.), and set up the project structure. This might take a few minutes.
+The command will create a new directory, download all necessary dependencies (React, ReactDOM, TypeScript, Webpack, Babel, etc.), and set up the project structure. This might take a few minutes.  When the command has completed, a new window will appear in your default browser.  The window will show the React logo.  You can close the window.
 
 ### Step 3: Navigate to Your Project Directory
 
