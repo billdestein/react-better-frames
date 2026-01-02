@@ -26,8 +26,8 @@ interface Props {
   canvas: Canvas
   children: ReactNode
   geometry: Geometry
+  isFixedSize?: boolean
   isIframe?: boolean
-  isResizable?: boolean
   onResize: (_geometry: Geometry) => void
   title: string
 }
@@ -373,6 +373,10 @@ export const Frame = (props: Props) => {
   const resizePointerDown = (event: any, resizerArg: Resizer): void => {
     event.preventDefault()
 
+    if (props.isFixedSize) {
+      return
+    }
+    
     const bodyElement = document.getElementById(bodyId)
     if (!bodyElement) {
       alert('cannot find bodyElement')
