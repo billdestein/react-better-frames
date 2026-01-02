@@ -182,4 +182,26 @@ The web page should look like this:
 
 ![Screenshot](screenshot-1.png)
 
+## Understanding Hello.tsx
+
+Here we will examine the file Hello.tsx.  We will start at the bottom of the file and progress upward.
+
+### The Hello function component
+
+The purpose of the Hello function is to:
+
+1) Render the container div.
+2) Wait until the container div has been rendered into the DOM.
+3) Create an instance of the Canvas class (passing the id of the container div).
+4) Call the app function, passing the newly created Canvas object.
+
+Note that there is more than one way to wait for a React component to be fully rendered.  The authors prefer the use of callback refs -- which is now considered an anti-pattern.  The more mainstream approach is to use React hooks useEffect, useRef and useState.
+
+### The app function
+
+The app function performs application-wide initialization, and then uses the Canvas object to create frames.  Note that frames can be created and destroyed at any time during the app lifecycle.
+
+### The HelloFrame function component
+
+There are no constraints of the name of the Frame components.  An app can have any number of Frame components.  Each Frame component manages its own user experience and business logic.
 
