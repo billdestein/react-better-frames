@@ -14,9 +14,9 @@ https://github.com/billdestein/react-better-frames-demo
 
 ## Key Concepts
 
-The following paragraphs will walk you through the development of a very simple windowed React application called 'Hello'.
+The following paragraphs will walk you through developing a very simple windowed React application called 'Hello'.
 
-Key concepts are the container div, the Canvas and the Frame.
+Key concepts include the container div, the Canvas and the Frame.
 
 The container div is what it sounds like.  It's a generic div, typically a large div, that will contain some number of Frames.  The container div must be assigned an Id that is globally unique.  
 
@@ -36,7 +36,7 @@ Make sure you have Node.js installed on your system, which includes npm (Node Pa
 Navigate to the directory where you want to create your project and run the following command. The key is to include the --template typescript flag.
 
 ```bash
-    npx create-react-app my-ts-app --template typescript
+    npx create-react-app hello-app --template typescript
 ```
 
 ### Step 2: Wait for Installation
