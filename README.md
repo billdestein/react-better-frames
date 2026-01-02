@@ -4,7 +4,7 @@ A user-friendly windowing system for React applications.
 
 ## Demo
 
-A simple interactive demo can be found here:
+An easy-to-understand interactive demo can be found here:
 
 https://billdestein.github.io/react-better-frames-demo/
 
@@ -195,13 +195,15 @@ The purpose of the Hello function is to:
 3) Create an instance of the Canvas class (passing the id of the container div).
 4) Call the app function, passing the newly created Canvas object.
 
-Note that there is more than one way to wait for a React component to be fully rendered.  The authors prefer the use of callback refs -- which is now considered an anti-pattern.  The more mainstream approach is to use React hooks useEffect, useRef and useState.
+Note that there are multiple ways to wait for a React component to be fully rendered.  The authors prefer the use of callback refs -- which is now considered an anti-pattern.  The more mainstream approach is to use React hooks useEffect, useRef and useState.
 
 ### The app function
 
-The app function performs application-wide initialization, and then uses the Canvas object to create frames.  Note that frames can be created and destroyed at any time during the app lifecycle.
+The app function performs application-wide initialization, and then uses the Canvas object to create frames.  Note that frames can be created and destroyed at any time during the app lifecycle.  They don't need to be created at app initialization time.
 
 ### The HelloFrame function component
 
-There are no constraints of the name of the Frame components.  An app can have any number of Frame components.  Each Frame component manages its own user experience and business logic.
+The HelloFrame component implements what we call a mini-app.  Each mini-app can have its own user experience and its own business logic.  An app may have many different mini-apps as can be seen in the demos.  Understand that one mini-app can spawn child mini-apps, and communicate with them using message passing and callbacks.
+
+
 
