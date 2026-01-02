@@ -89,4 +89,77 @@ Note 1:  The .tsx extension indicates a file containing TypeScript code and JSX.
 Note 2: The tsconfig.json file contains all the compiler options for your TypeScript project.
 You are now ready to start building your application with the benefits of TypeScript's static type checking!
 
+## Creating Your First Frame
+
+### Steo 1: Install the react-better-frames NPM package
+
+Using a second terminal window, cd to your hello-app directory, and run:
+
+```
+    npm install @billdestein/react-better-frames
+    npm install styled-components
+    cd src
+    touch Hello.tsx
+```
+
+### Step 2: Edit Hello.tsx
+
+Using your favorite code editor, open the newly create Hello.tsx file.  Paste the following code into the file and save the file.
+
+```typescript
+
+import React from 'react'
+import { Canvas, Frame, FrameProps } from '@billdestein/react-better-frames'
+import styled from 'styled-components'
+
+const HelloFrame = (frameProps: FrameProps) => {
+  const { canvas, geometry } = frameProps
+
+  return (
+    <Frame
+      buttons={[]}
+      canvas={canvas as Canvas}
+      geometry={geometry}
+      onResize={() => {}}
+      title={'My First Frame'}
+    >
+      <p>Hello</p>
+    </Frame>
+  )
+}
+
+const app = (canvas: Canvas) => {
+  canvas.addComponent(HelloFrame, {})
+}
+
+export const Hello = () => {
+  const ready = () => {
+    const element = document.getElementById('container-id')
+    const canvas = new Canvas(element)
+    app(canvas)
+  }
+
+  return (
+    <div ref={ready} style={{ height: '100vh' }} id="container-id"/>
+  );
+}
+```
+
+### Step 3: Edit App.tsx
+
+Again, using your favorite code editor, open the App.tsx file.  Paste the following code into the file and save the file.
+
+```typescript
+import React from 'react';
+import './App.css';
+import { Hello } from './Hello'
+
+function App() {
+  return (
+    <Hello/>
+  );
+}
+
+export default App;
+```
 
