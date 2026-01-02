@@ -31,13 +31,68 @@ This guide will walk you through setting up a new React project configured with 
 ### Prerequisites
 Make sure you have Node.js installed on your system, which includes npm (Node Package Manager).
 
-
-### Step1: Create a New Project
+### Step 1: Create a New Project
 
 Navigate to the directory where you want to create your project and run the following command. The key is to include the --template typescript flag.
 
 ```bash
+<<<<<<< HEAD
     npx create-react-app my-ts-app --template typescript
 ```
 
+=======
+npx create-react-app hello-app --template typescript
+```
+
+### Step 2: Wait for Installation
+
+The command will create a new directory, download all necessary dependencies (React, ReactDOM, TypeScript, Webpack, Babel, etc.), and set up the project structure. This might take a few minutes.
+
+### Step 3: Navigate to Your Project Directory
+
+Once the installation is complete, change your current directory to your new project folder:
+
+```bash
+   cd hello-app
+```
+
+### Step 4: Start the Development Server
+
+You can now start the local development server to view your new application in your browser:
+
+```bash
+    npm start
+```
+
+This command opens your default web browser to http://localhost:3000 and displays the default React starter page. The development server will watch your files and automatically reload the page when you make changes.
+
+### Step 5: Project Structure
+
+After running the command, your project structure will look similar to a standard JavaScript React app, but with some key differences:
+
+```
+hello-app/
+├── node_modules/
+├── public/
+├── src/
+│   ├── App.css
+│   ├── App.tsx          <-- TypeScript React component file
+│   ├── App.test.tsx     <-- TypeScript test file
+│   ├── index.css
+│   ├── index.tsx        <-- Entry point of your app, uses TypeScript
+│   ├── react-app-env.d.ts <-- TypeScript declaration file
+│   ├── reportWebVitals.ts
+│   └── setupTests.ts
+├── .gitignore
+├── package.json
+├── package-lock.json
+└── tsconfig.json        <-- TypeScript configuration file
+```
+
+Note 1:  The .tsx extension indicates a file containing TypeScript code and JSX.
+
+Note 2: The tsconfig.json file contains all the compiler options for your TypeScript project.
+You are now ready to start building your application with the benefits of TypeScript's static type checking!
+
+>>>>>>> 1f9dc02 (More work)
 
