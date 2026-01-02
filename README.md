@@ -51,19 +51,9 @@ Once the installation is complete, change your current directory to your new pro
    cd hello-app
 ```
 
-### Step 4: Start the Development Server
+### Step 4: Project Structure
 
-You can now start the local development server to view your new application in your browser:
-
-```bash
-    npm start
-```
-
-This command opens your default web browser to http://localhost:3000 and displays the default React starter page. The development server will watch your files and automatically reload the page when you make changes.
-
-### Step 5: Project Structure
-
-After running the command, your project structure will look similar to a standard JavaScript React app, but with some key differences:
+At this point, your project structure will look similar to a standard JavaScript React app, but with some key differences:
 
 ```
 hello-app/
@@ -163,4 +153,16 @@ function App() {
 
 export default App;
 ```
+
+### Start the Development Server
+
+You can now start the local development server to view your new application in your browser:
+
+```typescript
+    npm run start
+```
+
+This command will open a window in your default browser, pointing to http://localhost:3000.
+The web page should show a canvas with two frames.
+
 
