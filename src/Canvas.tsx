@@ -50,8 +50,8 @@ export class Canvas {
   //-----------------------------------------------------------------------------------------------
   addComponent(component: (frameProps: FrameProps) => React.JSX.Element, message: any ) {
     const geometry: Geometry = {
-      height: 200,
-      width: 300,
+      height: 400,
+      width: 600,
       x: this.lastX,
       y: this.lastY,
       z: this.lastZ,
