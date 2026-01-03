@@ -203,7 +203,7 @@ The app function performs application-wide initialization, and then uses the Can
 
 ### The HelloFrame function component
 
-The HelloFrame function component implements what we call a "frame".  Each frame can have its own user experience and its own business logic.  An app may have many different types of frames.  Note that a single fram can instantiate one or more child frames, andcommunicate with them using message passing and callbacks.
+The HelloFrame function component implements what we call a "frame".  Each frame can have its own user experience and its own business logic.  An app may have many different types of frames.  Note that a single fram can instantiate one or more child frames, and communicate with them using message passing and callbacks.
 
 
 
