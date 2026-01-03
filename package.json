@@ -1,11 +1,12 @@
 {
   "name": "@billdestein/react-better-frames",
-  "version": "0.0.17",
+  "version": "0.0.18",
   "description": "React Better Frames",
   "author": "Bill DeStein",
   "main": "dist/index.js",
   "module": "dist/index.js",
   "types": "dist/index.d.ts",
+  "repository": "github:billdestein/react-better-frames",
   "files": [
     "dist"
   ],
@@ -13,7 +14,23 @@
     "build": "tsc",
     "prepublishOnly": "npm run build"
   },
-  "keywords": [],
+  "keywords": [
+    "bill destein",
+    "billdestein",
+    "ui",
+    "ux",
+    "react",
+    "frame",
+    "popup",
+    "dialog",
+    "widget",
+    "windowing system",
+    "multiple",
+    "concurrent",
+    "resizable",
+    "draggable",
+    "restackable"
+  ],
   "license": "ISC",
   "dependencies": {
     "lodash": "^4.17.21"
